@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Data binding variables -->
+    <data>
+        <!-- ViewModel variable -->
+        <variable
+            name="viewModel"
+            type="com.simplemvvm.app.viewModel.MainViewModel" />
+
+        <!-- Adapter variable -->
+        <variable
+            name="adapter"
+            type="com.simplemvvm.app.adapter.ItemBetAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <!-- Button for updating odds -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:onClick="@{()-> viewModel.onUpdateOdds()}"
+            android:text="@string/update_odds" />
+
+        <!-- RecyclerView for displaying bet items -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:adapter="@{adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:setBetList="@{viewModel.betList}" />
+
+    </LinearLayout>
+
+</layout>
