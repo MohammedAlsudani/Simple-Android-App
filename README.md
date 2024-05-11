@@ -1,5 +1,5 @@
 
-# Simple MVVM App
+# Simple Android App
 
 This repository contains a simple Android application built with the Model-View-ViewModel (MVVM) architecture, following best practices and employing clean architecture principles. The app utilizes XML for layout design, incorporates data binding for efficient UI updates, and integrates Hilt for dependency injection. Additionally, Coil library is utilized for efficient image loading and displaying.
 
